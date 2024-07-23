@@ -3,7 +3,7 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #ffffff; /* Couleur de fond bleu clair */
+    background-color: #ffffff; /* Couleur de fond */
     color: #333;
 }
 
@@ -29,15 +29,54 @@ header .search-bar input {
     border-radius: 5px;
 }
 
-header nav a {
-    color: #fff;
-    text-decoration: none;
-    margin: 0 10px;
-    font-size: 1em;
+header nav {
+    position: relative;
 }
 
-header nav a:hover {
-    text-decoration: underline;
+header nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+header nav ul li {
+    position: relative;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    display: block;
+}
+
+header nav ul li a:hover {
+    background-color: #00509e;
+}
+
+header nav ul li .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #003366;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+header nav ul li .dropdown-content a {
+    color: #fff;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+header nav ul li .dropdown-content a:hover {
+    background-color: #00509e;
+}
+
+header nav ul li:hover .dropdown-content {
+    display: block;
 }
 
 /* Style de la bannière principale */
@@ -75,20 +114,38 @@ main .banner .banner-content p {
     margin-top: 10px;
 }
 
+.cta-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ffffff; /* Couleur d'accentuation */
+    color: #00319b;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #cc5200; /* Couleur d'accentuation foncée */
+}
+
 /* Style des catégories sur la page d'accueil */
 main .categories {
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
     margin: 20px 0;
 }
 
 main .category {
     text-align: center;
+    flex: 1 1 calc(33% - 20px); /* Trois éléments par ligne avec espace */
+    margin: 10px;
 }
 
 main .category img {
-    width: 150px;
-    height: 150px;
+    width: 100%;
+    max-width: 200px;
+    height: auto;
     object-fit: cover;
     border-radius: 10px;
     transition: transform 0.3s ease;
@@ -104,54 +161,23 @@ main .category p {
     color: #003366; /* Bleu foncé */
 }
 
-/* Style des marques sur la page Teeshirts */
-main .brands {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: 20px;
-}
-
-main .brand {
-    text-align: center;
-    margin: 20px;
-    flex: 1 1 calc(50% - 40px); /* Deux éléments par ligne avec espace */
-    max-width: calc(50% - 40px);
-}
-
-main .brand img {
-    width: 100%;
-    max-width: 200px;
-    height: auto;
-    object-fit: contain;
-    border-radius: 10px;
-    transition: transform 0.3s ease;
-}
-
-main .brand img:hover {
-    transform: scale(1.1);
-}
-
-main .brand p {
-    margin-top: 10px;
-    font-size: 1.2em;
-    color: #003366; /* Bleu foncé */
-}
-
 /* Style du footer */
 footer {
     background-color: #003366;
     color: #fff;
     padding: 20px;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-footer p {
-    margin: 10px 0;
+footer p, footer a {
+    margin: 5px 0;
 }
 
 footer a {
-    color: #fff;
+    color: #ff6600; /* Couleur d'accentuation */
     text-decoration: none;
 }
 
