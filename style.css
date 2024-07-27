@@ -139,7 +139,7 @@ main .banner .cta-button:hover {
     background-color: #00509e;
 }
 
-/* Style des catégories */
+/* Style des catégories sur la page d'accueil */
 main .categories {
     display: flex;
     justify-content: space-around;
@@ -166,6 +166,50 @@ main .category p {
     margin-top: 10px;
     font-size: 1.2em;
     color: #003366; /* Bleu foncé */
+}
+
+/* Style des marques sur la page Teeshirts */
+main .brands {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px;
+}
+
+main .brand {
+    text-align: center;
+    margin: 20px;
+    flex: 1 1 calc(50% - 40px); /* Deux éléments par ligne avec espace */
+    max-width: calc(50% - 40px);
+}
+
+main .brand img {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    object-fit: contain;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+main .brand img:hover {
+    transform: scale(1.1);
+}
+
+main .brand p {
+    margin-top: 10px;
+    font-size: 1.2em;
+    color: #003366; /* Bleu foncé */
+}
+
+main .brand p a {
+    text-decoration: none;
+    color: inherit;
+}
+
+main .brand p a:hover {
+    color: #00509e;
+    text-decoration: underline;
 }
 
 /* Style du footer */
