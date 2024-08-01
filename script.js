@@ -3,11 +3,11 @@ document.addEventListener('DOMContentLoaded', function() {
     let index = 0;
     const items = document.querySelectorAll('.carousel-item');
     const itemCount = items.length;
+    const innerCarousel = document.querySelector('.carousel-inner');
 
     function showNextItem() {
-        items[index].style.transform = 'translateX(-100%)';
         index = (index + 1) % itemCount;
-        items[index].style.transform = 'translateX(0)';
+        innerCarousel.style.transform = `translateX(-${index * 100}%)`;
     }
 
     setInterval(showNextItem, 3000);

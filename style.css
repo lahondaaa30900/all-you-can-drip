@@ -16,28 +16,44 @@ header {
     color: white;
 }
 
-.header-left nav ul.menu {
+.header-left .logo {
+    height: 50px;
+}
+
+.header-center {
+    flex: 1;
+    text-align: center;
+}
+
+.header-center .search-bar {
+    width: 60%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.header-right nav ul.menu {
     list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
 }
 
-.header-left nav ul.menu li {
+.header-right nav ul.menu li {
     margin: 0 10px;
 }
 
-.header-left nav ul.menu li a {
+.header-right nav ul.menu li a {
     color: white;
     text-decoration: none;
 }
 
-.header-left nav ul.menu li a:hover,
-.header-left nav ul.menu li .dropbtn:hover {
+.header-right nav ul.menu li a:hover,
+.header-right nav ul.menu li .dropbtn:hover {
     text-decoration: underline;
 }
 
-.header-left nav ul.menu li .dropdown-content {
+.header-right nav ul.menu li .dropdown-content {
     display: none;
     position: absolute;
     background-color: #003366;
@@ -45,47 +61,34 @@ header {
     z-index: 1;
 }
 
-.header-left nav ul.menu li .dropdown-content a {
+.header-right nav ul.menu li .dropdown-content a {
     color: white;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
 }
 
-.header-left nav ul.menu li .dropdown-content a:hover {
+.header-right nav ul.menu li .dropdown-content a:hover {
     background-color: #00509e;
 }
 
-.header-left nav ul.menu li:hover .dropdown-content {
+.header-right nav ul.menu li:hover .dropdown-content {
     display: block;
 }
 
-.header-right .logo {
-    height: 50px;
-}
-
-.search-bar {
-    text-align: center;
-    margin: 20px;
-}
-
-.search-bar input {
-    width: 300px;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-}
-
 .carousel {
-    display: flex;
-    justify-content: center;
-    overflow: hidden;
     position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
 }
 
 .carousel-item {
     min-width: 100%;
-    transition: transform 0.5s ease-in-out;
     position: relative;
 }
 
