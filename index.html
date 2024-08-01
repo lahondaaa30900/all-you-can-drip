@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Catalogue</title>
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
@@ -56,22 +56,18 @@
         </div>
     </header>
 
+    <div class="welcome-banner">
+        <h1>Bienvenue sur notre catalogue</h1>
+        <p>Vous y retrouverez une diversité de choses : vêtements, baskets, accessoires.</p>
+    </div>
+
     <main>
-        <div class="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item">
-                    <img src="./photos/categoriebasket.png" alt="Image 1">
-                    <a href="best-products.html" class="btn">Meilleurs produits</a>
-                </div>
-                <div class="carousel-item">
-                    <img src="./photos/categoriepull.png" alt="Image 2">
-                    <a href="best-products.html" class="btn">Meilleurs produits</a>
-                </div>
-                <div class="carousel-item">
-                    <img src="./photos/categorieteeshirt.png" alt="Image 3">
-                    <a href="best-products.html" class="btn">Meilleurs produits</a>
-                </div>
-            </div>
+        <div id="carousel" class="carousel">
+            <div class="carousel-slide" style="background-image: url('./photos/categoriebasket.png');"></div>
+            <div class="carousel-slide" style="background-image: url('./photos/categoriepull.png');"></div>
+            <div class="carousel-slide" style="background-image: url('./photos/categorieteeshirt.png');"></div>
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
         </div>
     </main>
 
@@ -81,6 +77,6 @@
         <p>Abonnez-vous à notre newsletter</p>
     </footer>
 
-    <script src="./script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
