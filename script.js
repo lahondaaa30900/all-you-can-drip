@@ -1,14 +1,14 @@
 // script.js
 document.addEventListener('DOMContentLoaded', function() {
-    const dropdowns = document.querySelectorAll('.dropdown');
+    let index = 0;
+    const items = document.querySelectorAll('.carousel-item');
+    const itemCount = items.length;
 
-    dropdowns.forEach(dropdown => {
-        dropdown.addEventListener('mouseover', function() {
-            this.querySelector('.dropdown-content').style.display = 'block';
-        });
+    function showNextItem() {
+        items[index].style.transform = 'translateX(-100%)';
+        index = (index + 1) % itemCount;
+        items[index].style.transform = 'translateX(0)';
+    }
 
-        dropdown.addEventListener('mouseout', function() {
-            this.querySelector('.dropdown-content').style.display = 'none';
-        });
-    });
+    setInterval(showNextItem, 3000);
 });
