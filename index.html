@@ -1,135 +1,113 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Catalogue de Produits</title>
-  <link rel="stylesheet" href="style.css" />
-  <!-- Icônes Font Awesome -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
-    integrity="sha512-..."
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
-  />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalogue de Produits</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Icônes Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-  <!-- En-tête -->
-  <header>
-    <div class="container">
-      <div class="logo">
-        <a href="./index.html">
-          <img src="./photos/logo2.png" alt="Logo de l'entreprise" />
-        </a>
-      </div>
-      <nav>
-        <ul>
-          <li><a href="./index.html">Accueil</a></li>
-          <li><a href="#">Catalogue</a></li>
-          <li><a href="#">À propos</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-      </nav>
-      <div class="search-bar">
-        <input type="text" placeholder="Rechercher un produit..." />
-        <button><i class="fas fa-search"></i></button>
-      </div>
-    </div>
-  </header>
+    <!-- En-tête -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="./index.html">
+                    <img src="./photos/logo2.png" alt="Logo de l'entreprise" />
+                </a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="./index.html">Accueil</a></li>
+                    <li><a href="#">Catalogue</a></li>
+                    <li><a href="#">À propos</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="search-bar">
+                <input type="text" placeholder="Rechercher un produit..." />
+                <button><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+    </header>
 
-  <!-- Bannière Principale -->
-  <section class="hero">
-    <div class="container">
-      <div class="hero-content">
-        <h1>Bienvenue sur notre catalogue. </h1>
-        <p>Découvrez nos larges gamme de produits à prix réduits !</p>
-        <a href="#" class="btn">Voir les marques</a>
-      </div>
-    </div>
-  </section>
+    <!-- Bannière Principale -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Bienvenue sur notre catalogue.</h1>
+                <p>Découvrez nos larges gamme de produits à prix réduits !</p>
+                <a href="#" class="btn">Voir les marques</a>
+            </div>
+        </div>
+    </section>
 
-  <!-- Catégories de Produits -->
-  <section class="categories">
-    <div class="container">
-      <h2>Nos Catégories</h2>
-      <div class="category-grid">
-        <div class="category-item">
-          <a href="teeshirt.html" target="blank"> <img src="./photos/categorieteeshirt.png" alt="T-shirts" /> </a>
-          <h3>T-shirts</h3>
+    <!-- Catégories de Produits (Carrousel) -->
+    <section class="categories">
+        <div class="container">
+            <h2>Nos Catégories</h2>
+            <div class="category-carousel">
+                <div class="category-item">
+                    <a href="teeshirt.html" target="_blank"> <img src="./photos/categorieteeshirt.png" alt="T-shirts" /> </a>
+                    <h3>T-shirts</h3>
+                </div>
+                <div class="category-item">
+                    <a href="pulls.html" target="_blank"> <img src="./photos/categoriepull.png" alt="Pulls" /> </a>
+                    <h3>Pulls</h3>
+                </div>
+                <div class="category-item">
+                    <a href="#" target="_blank"><img src="./photos/categoriebasket.png" alt="Baskets" /> </a>
+                    <h3>Baskets</h3>
+                </div>
+                <div class="category-item">
+                    <a href="#" target="_blank"> <img src="photos/accessoires.jpg" alt="Accessoires" /></a>
+                    <h3>Accessoires</h3>
+                </div>
+            </div>
         </div>
-        <div class="category-item">
-            <a href="./pulls.html" target="blank"> <img src="./photos/categoriepull.png" alt="Pulls" /> </a>
-          <h3>Pulls</h3>
-        </div>
-        <div class="category-item">
-            <a href="#" target="blank"><img src="./photos/categoriebasket.png" alt="Baskets" /> </a>
-          <h3>Baskets</h3>
-        </div>
-        <div class="category-item">
-            <a href="#" target="blank"> <img src="photos/accessoires.jpg" alt="Accessoires" /></a>
-          <h3>Accessoires</h3>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Produits Populaires -->
-  <section class="popular-products">
-    <div class="container">
-      <h2>Produits Populaires</h2>
-      <div class="product-grid">
-        <div class="product-item">
-          <img src="images/produit1.jpg" alt="Produit 1" />
-          <h3>Produit 1</h3>
-          <p>Description courte du produit 1.</p>
+    <!-- Section des marques -->
+    <section class="featured-brands">
+        <div class="container">
+            <h2>Nos Marques</h2>
+            <div class="brand-grid">
+                <!-- Cette section sera remplie dynamiquement via JavaScript -->
+            </div>
+            <div class="view-more">
+                <a href="./produits_marque1.html" class="btn">Voir plus</a>
+            </div>
         </div>
-        <div class="product-item">
-          <img src="images/produit2.jpg" alt="Produit 2" />
-          <h3>Produit 2</h3>
-          <p>Description courte du produit 2.</p>
-        </div>
-        <div class="product-item">
-          <img src="images/produit3.jpg" alt="Produit 3" />
-          <h3>Produit 3</h3>
-          <p>Description courte du produit 3.</p>
-        </div>
-        <div class="product-item">
-          <img src="images/produit4.jpg" alt="Produit 4" />
-          <h3>Produit 4</h3>
-          <p>Description courte du produit 4.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Pied de Page -->
-  <footer>
-    <div class="container">
-      <div class="footer-section">
-        <h3>À propos</h3>
-        <p>Bienvenue sur AYCD ! Votre catalogue avec une grande diversité de marque.</p>
-      </div>
-      <div class="footer-section">
-        <h3>Contact</h3>
-        <p>Téléphone : +33 1 23 45 67 89</p>
-        <p>Email : contact@example.com</p>
-      </div>
-      <div class="footer-section">
-        <h3>Suivez-nous</h3>
-        <div class="social-links">
-          <a href="#"><i class="fab fa-facebook-f"></i></a>
-          <a href="https://www.instagram.com/all.you.can.drip" target="_blank"><i class="fab fa-instagram"></i></a>
-          <a href="#"><i class="fab fa-twitter"></i></a>
-          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+    <!-- Pied de page -->
+    <footer>
+        <div class="container">
+            <div class="footer-section">
+                <h3>À propos</h3>
+                <p>Bienvenue sur AYCD ! Votre catalogue avec une grande diversité de marque.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>Téléphone : +33 1 23 45 67 89</p>
+                <p>Email : contact@example.com</p>
+            </div>
+            <div class="footer-section">
+                <h3>Suivez-nous</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/all.you.can.drip" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>&copy; 2024 AYCD. Tous droits réservés.</p>
-    </div>
-  </footer>
+        <div class="footer-bottom">
+            <p>&copy; 2024 AYCD. Tous droits réservés.</p>
+        </div>
+    </footer>
 
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

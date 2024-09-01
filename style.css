@@ -3,74 +3,74 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-  }
-  
-  body {
+}
+
+body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
     color: #333;
     background-color: #f9f9f9;
-  }
-  
-  /* Container */
-  .container {
+}
+
+/* Container */
+.container {
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
-  }
-  
-  /* En-tête */
-  header {
+}
+
+/* En-tête */
+header {
     background-color: #fff;
     padding: 20px 0;
     border-bottom: 1px solid #eaeaea;
     position: sticky;
     top: 0;
     z-index: 100;
-  }
-  
-  .logo img {
+}
+
+.logo img {
     width: 150px;
-  }
-  
-  nav {
+}
+
+nav {
     float: right;
-  }
-  
-  nav ul {
+}
+
+nav ul {
     list-style: none;
     display: flex;
     gap: 20px;
-  }
-  
-  nav ul li a {
+}
+
+nav ul li a {
     text-decoration: none;
     color: #333;
     font-weight: bold;
     transition: color 0.3s;
-  }
-  
-  nav ul li a:hover {
+}
+
+nav ul li a:hover {
     color: #007BFF;
-  }
-  
-  .search-bar {
+}
+
+.search-bar {
     clear: both;
     margin-top: 15px;
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-  
-  .search-bar input {
+}
+
+.search-bar input {
     width: 300px;
     padding: 10px;
     border: 1px solid #eaeaea;
     border-radius: 5px 0 0 5px;
     outline: none;
-  }
-  
-  .search-bar button {
+}
+
+.search-bar button {
     padding: 10px;
     border: 1px solid #eaeaea;
     background-color: #007BFF;
@@ -79,14 +79,14 @@
     cursor: pointer;
     outline: none;
     border-left: none;
-  }
-  
-  .search-bar button:hover {
+}
+
+.search-bar button:hover {
     background-color: #0056b3;
-  }
-  
-  /* Bannière Principale */
-  .hero {
+}
+
+/* Bannière Principale */
+.hero {
     background: url('./photos/logo2.png') no-repeat center center/cover;
     height: 80vh;
     display: flex;
@@ -94,9 +94,9 @@
     color: #fff;
     text-align: center;
     position: relative;
-  }
-  
-  .hero::before {
+}
+
+.hero::before {
     content: '';
     position: absolute;
     top: 0;
@@ -104,24 +104,24 @@
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
-  }
-  
-  .hero .container {
+}
+
+.hero .container {
     position: relative;
     z-index: 1;
-  }
-  
-  .hero h1 {
+}
+
+.hero h1 {
     font-size: 48px;
     margin-bottom: 20px;
-  }
-  
-  .hero p {
+}
+
+.hero p {
     font-size: 20px;
     margin-bottom: 30px;
-  }
-  
-  .hero .btn {
+}
+
+.hero .btn {
     padding: 15px 30px;
     background-color: #007BFF;
     color: #fff;
@@ -129,167 +129,253 @@
     font-size: 18px;
     border-radius: 5px;
     transition: background-color 0.3s;
-  }
-  
-  .hero .btn:hover {
+}
+
+.hero .btn:hover {
     background-color: #0056b3;
-  }
-  
-  /* Catégories de Produits */
-  .categories {
+}
+
+/* Carrousel des catégories */
+.category-carousel {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 20px;
+}
+
+.category-item {
+    flex: 0 0 auto;
+    width: 200px;
+    text-align: center;
+    scroll-snap-align: start;
+    transition: transform 0.3s;
+}
+
+.category-item img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.category-item h3 {
+    margin-top: 10px;
+    font-size: 18px;
+    color: #333;
+}
+
+.category-item:hover {
+    transform: scale(1.05);
+}
+
+/* Section des marques en vedette sur la page d'accueil */
+.featured-brands {
     padding: 60px 0;
-    background-color: #fff;
-  }
-  
-  .categories h2 {
+    background-color: #f9f9f9;
+}
+
+.featured-brands h2 {
     text-align: center;
     margin-bottom: 40px;
     font-size: 36px;
     color: #333;
-  }
-  
-  .category-grid {
+}
+
+.featured-brands .brand-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 20px;
-  }
-  
-  .category-item {
-    background-color: #f9f9f9;
-    border-radius: 10px;
-    overflow: hidden;
+    justify-items: center;
+    align-items: center;
+}
+
+.featured-brands .brand-item {
     text-align: center;
     transition: transform 0.3s;
-    cursor: pointer;
-  }
-  
-  .category-item img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-  }
-  
-  .category-item h3 {
-    padding: 20px 0;
-    font-size: 24px;
+}
+
+.featured-brands .brand-item img {
+    width: 150px;
+    height: auto;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.featured-brands .brand-item h3 {
+    font-size: 18px;
     color: #333;
-  }
-  
-  .category-item:hover {
+}
+
+.featured-brands .brand-item:hover {
     transform: translateY(-10px);
-  }
-  
-  /* Produits Populaires */
-  .popular-products {
+}
+
+.view-more {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.view-more .btn {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.view-more .btn:hover {
+    background-color: #0056b3;
+}
+
+/* Produits Populaires */
+.popular-products {
     padding: 60px 0;
-  }
-  
-  .popular-products h2 {
+}
+
+.popular-products h2 {
     text-align: center;
     margin-bottom: 40px;
     font-size: 36px;
     color: #333;
-  }
-  
-  .product-grid {
+}
+
+.product-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
-  }
-  
-  .product-item {
+}
+
+.product-item {
     background-color: #fff;
     border: 1px solid #eaeaea;
     border-radius: 10px;
     padding: 20px;
     text-align: center;
     transition: box-shadow 0.3s;
-  }
-  
-  .product-item img {
+}
+
+.product-item img {
     width: 100%;
     height: 200px;
     object-fit: cover;
     margin-bottom: 15px;
     border-radius: 10px;
-  }
-  
-  .product-item h3 {
+}
+
+.product-item h3 {
     font-size: 22px;
     margin-bottom: 10px;
     color: #333;
-  }
-  
-  .product-item p {
+}
+
+.product-item p {
     font-size: 16px;
     color: #777;
     margin-bottom: 15px;
-  }
-  
-  .product-item:hover {
+}
+
+.product-item:hover {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Pied de Page */
-  footer {
+}
+
+/* Pied de Page */
+footer {
     background-color: #333;
     color: #fff;
     padding: 40px 0;
-  }
-  
-  .footer-section {
+}
+
+.footer-section {
     margin-bottom: 20px;
-  }
-  
-  .footer-section h3 {
+}
+
+.footer-section h3 {
     font-size: 20px;
     margin-bottom: 15px;
-  }
-  
-  .footer-section p {
+}
+
+.footer-section p {
     font-size: 16px;
     line-height: 1.5;
-  }
-  
-  .social-links {
+}
+
+.social-links {
     display: flex;
     gap: 15px;
-  }
-  
-  .social-links a {
+}
+
+.social-links a {
     color: #fff;
     font-size: 20px;
     transition: color 0.3s;
-  }
-  
-  .social-links a:hover {
+}
+
+.social-links a:hover {
     color: #007BFF;
-  }
-  
-  .footer-bottom {
+}
+
+.footer-bottom {
     text-align: center;
     border-top: 1px solid #444;
     padding-top: 20px;
     margin-top: 20px;
     font-size: 14px;
     color: #aaa;
-  }
-  
-  /* Responsivité */
-  @media (max-width: 768px) {
+}
+
+/* Responsivité */
+@media (max-width: 768px) {
     .search-bar {
-      flex-direction: column;
+        flex-direction: column;
     }
-  
+
     .search-bar input {
-      width: 100%;
-      margin-bottom: 10px;
-      border-radius: 5px;
+        width: 100%;
+        margin-bottom: 10px;
+        border-radius: 5px;
     }
-  
+
     .search-bar button {
-      width: 100%;
-      border-radius: 5px;
+        width: 100%;
+        border-radius: 5px;
     }
-  }
-  
+}
+/* Section des marques */
+.brands-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    justify-items: center;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.brand {
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.brand img {
+    width: 100px;
+    height: auto;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.brand p {
+    font-size: 16px;
+    color: #333;
+    margin-top: 5px;
+}
+
+.brand a {
+    text-decoration: none;
+    color: #333;
+}
+
+.brand:hover {
+    transform: scale(1.05);
+}
+
