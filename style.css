@@ -12,7 +12,6 @@ body {
     background-color: #f9f9f9;
 }
 
-/* Container */
 .container {
     width: 90%;
     max-width: 1200px;
@@ -33,10 +32,6 @@ header {
     width: 150px;
 }
 
-nav {
-    float: right;
-}
-
 nav ul {
     list-style: none;
     display: flex;
@@ -55,7 +50,6 @@ nav ul li a:hover {
 }
 
 .search-bar {
-    clear: both;
     margin-top: 15px;
     display: flex;
     justify-content: center;
@@ -135,7 +129,7 @@ nav ul li a:hover {
     background-color: #0056b3;
 }
 
-/* Carrousel des catégories */
+/* Catégories de Produits */
 .category-carousel {
     display: flex;
     overflow-x: auto;
@@ -168,47 +162,40 @@ nav ul li a:hover {
     transform: scale(1.05);
 }
 
-/* Section des marques en vedette sur la page d'accueil */
-.featured-brands {
-    padding: 60px 0;
-    background-color: #f9f9f9;
-}
-
-.featured-brands h2 {
-    text-align: center;
-    margin-bottom: 40px;
-    font-size: 36px;
-    color: #333;
+/* Section des marques */
+@keyframes fadeInOut {
+    0% { opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { opacity: 0; }
 }
 
 .featured-brands .brand-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     gap: 20px;
-    justify-items: center;
-    align-items: center;
 }
 
+/* Correction pour l'alignement des titres des marques */
 .featured-brands .brand-item {
     text-align: center;
-    transition: transform 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .featured-brands .brand-item img {
     width: 150px;
     height: auto;
-    object-fit: contain;
     margin-bottom: 10px;
 }
 
 .featured-brands .brand-item h3 {
     font-size: 18px;
     color: #333;
+    margin: 0;
 }
 
-.featured-brands .brand-item:hover {
-    transform: translateY(-10px);
-}
 
 .view-more {
     text-align: center;
@@ -229,66 +216,11 @@ nav ul li a:hover {
     background-color: #0056b3;
 }
 
-/* Produits Populaires */
-.popular-products {
-    padding: 60px 0;
-}
-
-.popular-products h2 {
-    text-align: center;
-    margin-bottom: 40px;
-    font-size: 36px;
-    color: #333;
-}
-
-.product-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-}
-
-.product-item {
-    background-color: #fff;
-    border: 1px solid #eaeaea;
-    border-radius: 10px;
-    padding: 20px;
-    text-align: center;
-    transition: box-shadow 0.3s;
-}
-
-.product-item img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    margin-bottom: 15px;
-    border-radius: 10px;
-}
-
-.product-item h3 {
-    font-size: 22px;
-    margin-bottom: 10px;
-    color: #333;
-}
-
-.product-item p {
-    font-size: 16px;
-    color: #777;
-    margin-bottom: 15px;
-}
-
-.product-item:hover {
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
-
 /* Pied de Page */
 footer {
     background-color: #333;
     color: #fff;
     padding: 40px 0;
-}
-
-.footer-section {
-    margin-bottom: 20px;
 }
 
 .footer-section h3 {
@@ -341,86 +273,63 @@ footer {
         width: 100%;
         border-radius: 5px;
     }
+
+    .featured-brands .brand-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
-/* Section des marques */
-.brands-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 20px;
-    justify-items: center;
-    align-items: center;
-    margin-top: 40px;
+.view-more {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 40px; /* Ajout d'un espace en bas pour éviter le chevauchement */
+}
+
+.view-more .btn {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.view-more .btn:hover {
+    background-color: #0056b3;
+}
+/* Styles pour la grille des marques */
+.brands {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 20px;
 }
 
 .brand {
     text-align: center;
-    transition: transform 0.3s;
+    margin-bottom: 20px;
+    flex-basis: 23%; /* Cela permet d'avoir environ 4 marques par ligne */
 }
 
 .brand img {
-    width: 100px;
+    width: 100%;
+    max-width: 150px;
     height: auto;
     object-fit: contain;
     margin-bottom: 10px;
 }
 
 .brand p {
+    margin: 0;
     font-size: 16px;
-    color: #333;
-    margin-top: 5px;
+    font-weight: bold;
 }
 
 .brand a {
     text-decoration: none;
-    color: #333;
+    color: #007BFF;
 }
 
-.brand:hover {
-    transform: scale(1.05);
+.brand a:hover {
+    text-decoration: underline;
 }
-/* Animation de fondu simultané pour les marques */
-@keyframes fadeInOut {
-    0% { opacity: 0; }
-    20% { opacity: 1; }
-    80% { opacity: 1; }
-    100% { opacity: 0; }
-}
-
-.brand-item {
-    opacity: 0;
-    animation: fadeInOut 10s ease-in-out infinite;
-}
-
-.brand-grid {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.brand-item {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    transition: opacity 1s ease-in-out;
-}
-
-.brand-item img {
-    max-width: 150px;
-    height: auto;
-    margin-bottom: 10px;
-}
-
-.brand-item h3 {
-    font-size: 18px;
-    color: #333;
-}
-
-
-

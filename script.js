@@ -1,19 +1,3 @@
-// script.js
-
-// Fonctionnalité de recherche (exemple simple)
-const searchInput = document.querySelector('.search-bar input');
-const searchButton = document.querySelector('.search-bar button');
-
-searchButton.addEventListener('click', () => {
-  const query = searchInput.value.trim();
-  if (query !== '') {
-    // Rediriger vers une page de résultats de recherche ou filtrer les produits affichés
-    alert(`Vous avez recherché : ${query}`);
-    // Implémentez la logique de recherche ici
-  }
-});
-
-// Fonctionnalités supplémentaires peuvent être ajoutées ici
 document.addEventListener('DOMContentLoaded', () => {
     const brands = [
         {name: "Nike", image: "./photos/nike.png", link: "produits_nike.html"},
@@ -35,9 +19,9 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentIndex = 0;
 
     const showBrands = () => {
-        brandGrid.innerHTML = ''; // Clear the current brands
+        brandGrid.innerHTML = ''; // Effacer les marques précédentes
 
-        // Select the current set of brands to display
+        // Sélectionner les marques à afficher
         const selectedBrands = brands.slice(currentIndex, currentIndex + 4);
         selectedBrands.forEach((brand) => {
             const brandItem = document.createElement('div');
@@ -51,12 +35,11 @@ document.addEventListener('DOMContentLoaded', () => {
             brandGrid.appendChild(brandItem);
         });
 
-        // Update the index to show the next set of brands in the next interval
+        // Mettre à jour l'index pour afficher les marques suivantes
         currentIndex = (currentIndex + 4) % brands.length;
     };
 
-    // Initialize the brands and set the interval for the animation
+    // Initialiser les marques et configurer l'intervalle pour l'animation
     showBrands();
-    setInterval(showBrands, 10000); // Change brands every 10 seconds
+    setInterval(showBrands, 10000); // Changer les marques toutes les 10 secondes
 });
-
