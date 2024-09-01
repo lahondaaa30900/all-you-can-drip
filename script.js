@@ -16,31 +16,47 @@ searchButton.addEventListener('click', () => {
 // Fonctionnalités supplémentaires peuvent être ajoutées ici
 document.addEventListener('DOMContentLoaded', () => {
     const brands = [
-        {name: "Marque 1", image: "./photos/marque1.png", link: "produits_marque1.html"},
-        {name: "Marque 2", image: "./photos/marque2.png", link: "produits_marque2.html"},
-        {name: "Marque 3", image: "./photos/marque3.png", link: "produits_marque3.html"},
-        {name: "Marque 4", image: "./photos/marque4.png", link: "produits_marque4.html"},
-        {name: "Marque 5", image: "./photos/marque5.png", link: "produits_marque5.html"},
-        {name: "Marque 6", image: "./photos/marque6.png", link: "produits_marque6.html"}
+        {name: "Nike", image: "./photos/nike.png", link: "produits_nike.html"},
+        {name: "Adidas", image: "./photos/adidas.png", link: "produits_adidas.html"},
+        {name: "Puma", image: "./photos/puma.png", link: "produits_puma.html"},
+        {name: "Palm Angels", image: "./photos/palm-angels.png", link: "produits_palm_angels.html"},
+        {name: "Louis Vuitton", image: "./photos/louis-vuitton.png", link: "produits_louis_vuitton.html"},
+        {name: "Christian Dior", image: "./photos/christian-dior.png", link: "produits_christian_dior.html"},
+        {name: "Air Jordan", image: "./photos/air-jordan.png", link: "produits_air_jordan.html"},
+        {name: "Celine", image: "./photos/celine.png", link: "produits_celine.html"},
+        {name: "Burberry", image: "./photos/burberry.png", link: "produits_burberry.html"},
+        {name: "Calvin Klein", image: "./photos/calvin-klein.png", link: "produits_calvin_klein.html"},
+        {name: "New Balance", image: "./photos/new-balance.png", link: "produits_new_balance.html"},
+        {name: "Amiri", image: "./photos/amiri.png", link: "produits_amiri.html"},
+        {name: "Off-White", image: "./photos/off-white.png", link: "produits_off_white.html"}
     ];
 
     const brandGrid = document.querySelector('.featured-brands .brand-grid');
-    brandGrid.innerHTML = '';
+    let currentIndex = 0;
 
-    // Afficher aléatoirement 4 marques
-    const shuffledBrands = brands.sort(() => 0.5 - Math.random()).slice(0, 4);
+    const showBrands = () => {
+        brandGrid.innerHTML = ''; // Clear the current brands
 
-    shuffledBrands.forEach(brand => {
-        const brandItem = document.createElement('div');
-        brandItem.classList.add('brand-item');
-        brandItem.innerHTML = `
-            <a href="${brand.link}">
-                <img src="${brand.image}" alt="${brand.name}">
-                <h3>${brand.name}</h3>
-            </a>
-        `;
-        brandGrid.appendChild(brandItem);
-    });
+        // Select the current set of brands to display
+        const selectedBrands = brands.slice(currentIndex, currentIndex + 4);
+        selectedBrands.forEach((brand) => {
+            const brandItem = document.createElement('div');
+            brandItem.classList.add('brand-item');
+            brandItem.innerHTML = `
+                <a href="${brand.link}">
+                    <img src="${brand.image}" alt="${brand.name}">
+                    <h3>${brand.name}</h3>
+                </a>
+            `;
+            brandGrid.appendChild(brandItem);
+        });
+
+        // Update the index to show the next set of brands in the next interval
+        currentIndex = (currentIndex + 4) % brands.length;
+    };
+
+    // Initialize the brands and set the interval for the animation
+    showBrands();
+    setInterval(showBrands, 10000); // Change brands every 10 seconds
 });
 
-// Par exemple : sliders, animations, chargement dynamique des produits, etc.
