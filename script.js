@@ -1,28 +1,17 @@
 // script.js
-let slideIndex = 0;
 
-function showSlides() {
-    let slides = document.querySelectorAll(".carousel-slide");
-    for (let i = 0; i < slides.length; i++) {
-        slides[i].classList.remove("active");
-    }
-    slideIndex++;
-    if (slideIndex > slides.length) {slideIndex = 1}    
-    slides[slideIndex-1].classList.add("active");
-    setTimeout(showSlides, 3000); // Change image every 3 seconds
-}
+// Fonctionnalité de recherche (exemple simple)
+const searchInput = document.querySelector('.search-bar input');
+const searchButton = document.querySelector('.search-bar button');
 
-function plusSlides(n) {
-    slideIndex += n;
-    let slides = document.querySelectorAll(".carousel-slide");
-    if (slideIndex > slides.length) {slideIndex = 1}
-    if (slideIndex < 1) {slideIndex = slides.length}
-    for (let i = 0; i < slides.length; i++) {
-        slides[i].classList.remove("active");
-    }
-    slides[slideIndex-1].classList.add("active");
-}
-
-document.addEventListener('DOMContentLoaded', (event) => {
-    showSlides();
+searchButton.addEventListener('click', () => {
+  const query = searchInput.value.trim();
+  if (query !== '') {
+    // Rediriger vers une page de résultats de recherche ou filtrer les produits affichés
+    alert(`Vous avez recherché : ${query}`);
+    // Implémentez la logique de recherche ici
+  }
 });
+
+// Fonctionnalités supplémentaires peuvent être ajoutées ici
+// Par exemple : sliders, animations, chargement dynamique des produits, etc.

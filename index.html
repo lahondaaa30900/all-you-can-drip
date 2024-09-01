@@ -1,82 +1,136 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catalogue</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Catalogue de Produits</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Icônes Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+    integrity="sha512-..."
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
 </head>
 <body>
-    <header>
-        <div class="header-left">
-            <img src="./photos/logo2.png" alt="Logo" class="logo">
-        </div>
-        <div class="header-center">
-            <input type="text" placeholder="Rechercher un produit..." class="search-bar">
-        </div>
-        <div class="header-right">
-            <nav>
-                <ul class="menu">
-                    <li><a href="index.html">Accueil</a></li>
-                    <li class="dropdown">
-                        <a href="#" class="dropbtn">Pulls</a>
-                        <div class="dropdown-content">
-                            <a href="#">Pulls en laine</a>
-                            <a href="#">Pulls en coton</a>
-                            <a href="#">Pulls en cachemire</a>
-                        </div>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropbtn">Baskets</a>
-                        <div class="dropdown-content">
-                            <a href="#">Baskets de sport</a>
-                            <a href="#">Baskets de ville</a>
-                            <a href="#">Baskets de randonnée</a>
-                        </div>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropbtn">Teeshirts</a>
-                        <div class="dropdown-content">
-                            <a href="#">Teeshirts manches courtes</a>
-                            <a href="#">Teeshirts manches longues</a>
-                            <a href="#">Teeshirts sport</a>
-                        </div>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropbtn">Accessoires</a>
-                        <div class="dropdown-content">
-                            <a href="#">Ceintures</a>
-                            <a href="#">Montres</a>
-                            <a href="#">Casquettes</a>
-                            <a href="#">Chaussettes</a>
-                        </div>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <div class="welcome-banner">
-        <h1>Bienvenue sur notre catalogue</h1>
-        <p>Vous y retrouverez une diversité de choses : vêtements, baskets, accessoires.</p>
+  <!-- En-tête -->
+  <header>
+    <div class="container">
+      <div class="logo">
+        <a href="./index.html">
+          <img src="./photos/logo2.png" alt="Logo de l'entreprise" />
+        </a>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#">Accueil</a></li>
+          <li><a href="#">Catalogue</a></li>
+          <li><a href="#">À propos</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="search-bar">
+        <input type="text" placeholder="Rechercher un produit..." />
+        <button><i class="fas fa-search"></i></button>
+      </div>
     </div>
+  </header>
 
-    <main>
-        <div id="carousel" class="carousel">
-            <div class="carousel-slide" style="background-image: url('./photos/categoriebasket.png');"></div>
-            <div class="carousel-slide" style="background-image: url('./photos/categoriepull.png');"></div>
-            <div class="carousel-slide" style="background-image: url('./photos/categorieteeshirt.png');"></div>
-            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  <!-- Bannière Principale -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1>Bienvenue dans notre catalogue de produits</h1>
+        <p>Découvrez nos dernières collections et trouvez le produit parfait pour vous.</p>
+        <a href="#" class="btn">Voir le Catalogue</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Catégories de Produits -->
+  <section class="categories">
+    <div class="container">
+      <h2>Nos Catégories</h2>
+      <div class="category-grid">
+        <div class="category-item">
+          <img src="images/categorie1.jpg" alt="Catégorie 1" />
+          <h3>Catégorie 1</h3>
         </div>
-    </main>
+        <div class="category-item">
+          <img src="images/categorie2.jpg" alt="Catégorie 2" />
+          <h3>Catégorie 2</h3>
+        </div>
+        <div class="category-item">
+          <img src="images/categorie3.jpg" alt="Catégorie 3" />
+          <h3>Catégorie 3</h3>
+        </div>
+        <div class="category-item">
+          <img src="images/categorie4.jpg" alt="Catégorie 4" />
+          <h3>Catégorie 4</h3>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <footer>
-        <p>Contact | FAQ | Conditions d'utilisation</p>
-        <p>Suivez-nous sur les réseaux sociaux!</p>
-        <p>Abonnez-vous à notre newsletter</p>
-    </footer>
+  <!-- Produits Populaires -->
+  <section class="popular-products">
+    <div class="container">
+      <h2>Produits Populaires</h2>
+      <div class="product-grid">
+        <div class="product-item">
+          <img src="images/produit1.jpg" alt="Produit 1" />
+          <h3>Produit 1</h3>
+          <p>Description courte du produit 1.</p>
+        </div>
+        <div class="product-item">
+          <img src="images/produit2.jpg" alt="Produit 2" />
+          <h3>Produit 2</h3>
+          <p>Description courte du produit 2.</p>
+        </div>
+        <div class="product-item">
+          <img src="images/produit3.jpg" alt="Produit 3" />
+          <h3>Produit 3</h3>
+          <p>Description courte du produit 3.</p>
+        </div>
+        <div class="product-item">
+          <img src="images/produit4.jpg" alt="Produit 4" />
+          <h3>Produit 4</h3>
+          <p>Description courte du produit 4.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <script src="script.js"></script>
+  <!-- Pied de Page -->
+  <footer>
+    <div class="container">
+      <div class="footer-section">
+        <h3>À propos</h3>
+        <p>Brève description de l'entreprise ou du site web.</p>
+      </div>
+      <div class="footer-section">
+        <h3>Contact</h3>
+        <p>Adresse : 123 Rue Exemple, Ville, Pays</p>
+        <p>Téléphone : +33 1 23 45 67 89</p>
+        <p>Email : contact@example.com</p>
+      </div>
+      <div class="footer-section">
+        <h3>Suivez-nous</h3>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/votre_nom_utilisateur" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 Votre Entreprise. Tous droits réservés.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
