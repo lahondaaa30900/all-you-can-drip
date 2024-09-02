@@ -3,107 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Teeshirts - Catalogue</title>
+    <title>Nos Pulls</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
+    <!-- En-tête -->
     <header>
-        <div class="logo">
-            <a href="index.html"><img src="./photos/logo2.png" alt="Logo"></a>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html"><img src="./photos/logo2.png" alt="Logo"></a>
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Rechercher un produit...">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+            <nav>
+                <ul class="menu">
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="teeshirt.html">Teeshirts</a></li>
+                    <li><a href="pulls.html">Pulls</a></li>
+                    <li><a href="baskets.html">Baskets</a></li>
+                    <li><a href="accessoires.html">Accessoires</a></li>
+                </ul>
+            </nav>
         </div>
-        <div class="search-bar">
-            <input type="text" placeholder="Rechercher un produit...">
-        </div>
-        <nav>
-            <ul class="menu">
-                <li class="dropdown">
-                    <a href="#" class="dropbtn">Teeshirts</a>
-                    <div class="dropdown-content">
-                        <a href="#">Teeshirts manches courtes</a>
-                        <a href="#">Teeshirts manches longues</a>
-                        <a href="#">Teeshirts sport</a>
-                    </div>
-                </li>
-                <li class="dropdown">
-                    <a href="#" class="dropbtn">Pulls</a>
-                    <div class="dropdown-content">
-                        <a href="#">Pulls en laine</a>
-                        <a href="#">Pulls en coton</a>
-                        <a href="#">Pulls en cachemire</a>
-                    </div>
-                </li>
-                <li class="dropdown">
-                    <a href="#" class="dropbtn">Baskets</a>
-                    <div class="dropdown-content">
-                        <a href="#">Baskets de sport</a>
-                        <a href="#">Baskets de ville</a>
-                        <a href="#">Baskets de randonnée</a>
-                    </div>
-                </li>
-            </ul>
-        </nav>
     </header>
+
+    <!-- Section des produits -->
     <main>
-        <div class="brands">
-            <div class="brand">
-                <img src="./photos/nike.png" alt="Nike">
-                <p><a href="#">Nike</a></p>
-            </div>
-            <div class="brand">
-                <img src="./photos/adidas.png" alt="Adidas">
-                <p><a href="#">Adidas</a></p>
-            </div>
-            <div class="brand">
-                <img src="./photos/puma.png" alt="Puma">
-                <p><a href="#">Puma</a></p>
-            </div>
-            <div class="brand">
-                <img src="./photos/palm-angels.png" alt="Palm Angels">
-                <p><a href="#">Palm Angels</a></p>
-            </div>
-            <div class="brand">
-                <img src="./photos/louis-vuitton.png" alt="Louis Vuitton">
-                <p><a href="#">Louis Vuitton</a></p>
-            </div>
-            <div class="brand">
-                <img src="./photos/christian-dior.png" alt="Christian Dior">
-                <p><a href="#">Christian Dior</a></p>
-            </div>
-            <div class="brand">
-                <img src="./photos/air-jordan.png" alt="Air Jordan">
-                <p><a href="#">Air Jordan</a></p>
-            </div>
-            <div class="brand">
-                <img src="./photos/celine.png" alt="Celine">
-                <p><a href="#">Celine</a></p>
-            </div>
-            <div class="brand">
-                <img src="./photos/burberry.png" alt="Burberry">
-                <p><a href="#">Burberry</a></p>
-            </div>
-            <div class="brand">
-                <img src="./photos/calvin-klein.png" alt="Calvin Klein">
-                <p><a href="#">Calvin Klein</a></p>
-            </div>
-            <div class="brand">
-                <img src="./photos/new-balance.png" alt="New Balance">
-                <p><a href="#">New Balance</a></p>
-            </div>
-            <div class="brand">
-                <img src="./photos/amiri.png" alt="Amiri">
-                <p><a href="#">Amiri</a></p>
-            </div>
-            <div class="brand">
-                <img src="./photos/off-white.png" alt="Off-White">
-                <p><a href="#">Off-White</a></p>
+        <div class="container">
+            <h1>Nos Pulls</h1>
+            <div class="products">
+                <!-- Ajouter ici les produits liés à la catégorie Pulls -->
             </div>
         </div>
     </main>
+
+    <!-- Pied de page -->
     <footer>
-        <p>Contact | FAQ | Conditions d'utilisation</p>
-        <p>Suivez-nous sur les réseaux sociaux!</p>
-        <p>Abonnez-vous à notre newsletter</p>
+        <div class="container">
+            <div class="footer-section">
+                <h3>À propos</h3>
+                <p>Bienvenue sur AYCD ! Votre catalogue avec une grande diversité de marques.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>Téléphone : +33 1 23 45 67 89</p>
+                <p>Email : contact@example.com</p>
+            </div>
+            <div class="footer-section">
+                <h3>Suivez-nous</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/all.you.can.drip" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 AYCD. Tous droits réservés.</p>
+        </div>
     </footer>
+
     <script src="script.js"></script>
 </body>
 </html>
