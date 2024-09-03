@@ -19,208 +19,118 @@ body {
 }
 
 /* En-tête */
-header {
-    background-color: #fff;
+.header {
+    background-color: #3c3c3c;
     padding: 20px 0;
-    border-bottom: 1px solid #eaeaea;
-    position: sticky;
-    top: 0;
-    z-index: 100;
+    text-align: center;
 }
 
 .logo img {
-    width: 150px;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
-    transition: color 0.3s;
-}
-
-nav ul li a:hover {
-    color: #007BFF;
+    width: 120px;
+    margin-bottom: 10px;
 }
 
 .search-bar {
-    margin-top: 15px;
     display: flex;
     justify-content: center;
-    align-items: center;
+    margin-bottom: 20px;
 }
 
 .search-bar input {
-    width: 300px;
     padding: 10px;
-    border: 1px solid #eaeaea;
-    border-radius: 5px 0 0 5px;
+    width: 300px;
+    border-radius: 20px 0 0 20px;
+    border: none;
     outline: none;
 }
 
 .search-bar button {
-    padding: 10px;
-    border: 1px solid #eaeaea;
-    background-color: #007BFF;
-    color: #fff;
-    border-radius: 0 5px 5px 0;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 0 20px 20px 0;
     cursor: pointer;
     outline: none;
-    border-left: none;
 }
 
-.search-bar button:hover {
-    background-color: #0056b3;
+nav ul {
+    list-style: none;
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    background-color: #333;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: #007bff;
 }
 
 /* Bannière Principale */
 .hero {
-    background: url('./photos/logo2.png') no-repeat center center/cover;
-    height: 80vh;
-    display: flex;
-    align-items: center;
+    background-color: #0056b3;
     color: #fff;
     text-align: center;
+    padding: 60px 0;
     position: relative;
-}
-
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-}
-
-.hero .container {
-    position: relative;
-    z-index: 1;
 }
 
 .hero h1 {
     font-size: 48px;
-    margin-bottom: 20px;
-}
-
-.hero p {
-    font-size: 20px;
-    margin-bottom: 30px;
-}
-
-.hero .btn {
-    padding: 15px 30px;
-    background-color: #007BFF;
-    color: #fff;
-    text-decoration: none;
-    font-size: 18px;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-}
-
-.hero .btn:hover {
-    background-color: #0056b3;
-}
-
-/* Catégories de Produits */
-.category-carousel {
-    display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    gap: 20px;
-}
-
-.category-item {
-    flex: 0 0 auto;
-    width: 200px;
-    text-align: center;
-    scroll-snap-align: start;
-    transition: transform 0.3s;
-}
-
-.category-item img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    border-radius: 10px;
-}
-
-.category-item h3 {
-    margin-top: 10px;
-    font-size: 18px;
-    color: #333;
-}
-
-.category-item:hover {
-    transform: scale(1.05);
-}
-
-/* Section des marques */
-@keyframes fadeInOut {
-    0% { opacity: 0; }
-    10% { opacity: 1; }
-    90% { opacity: 1; }
-    100% { opacity: 0; }
-}
-
-.featured-brands .brand-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-}
-
-/* Correction pour l'alignement des titres des marques */
-.featured-brands .brand-item {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.featured-brands .brand-item img {
-    width: 150px;
-    height: auto;
     margin-bottom: 10px;
 }
 
-.featured-brands .brand-item h3 {
-    font-size: 18px;
-    color: #333;
-    margin: 0;
+.hero p {
+    font-size: 24px;
+    margin-bottom: 30px;
 }
 
+.hero-logo img {
+    width: 200px;
+    margin-top: 20px;
+}
 
-.view-more {
+/* Catégories */
+.categories {
+    padding: 50px 0;
     text-align: center;
-    margin-top: 30px;
 }
 
-.view-more .btn {
-    padding: 10px 20px;
-    background-color: #007BFF;
-    color: #fff;
-    text-decoration: none;
-    font-size: 18px;
-    border-radius: 5px;
-    transition: background-color 0.3s;
+.categories h2 {
+    font-size: 32px;
+    margin-bottom: 30px;
+    color: #333;
 }
 
-.view-more .btn:hover {
-    background-color: #0056b3;
+/* Marques */
+.featured-brands {
+    padding: 50px 0;
+    text-align: center;
 }
 
-/* Pied de Page */
+.featured-brands h2 {
+    font-size: 32px;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+/* Pied de page */
 footer {
     background-color: #333;
     color: #fff;
     padding: 40px 0;
+    text-align: center;
+}
+
+.footer-section {
+    margin-bottom: 20px;
 }
 
 .footer-section h3 {
@@ -233,23 +143,7 @@ footer {
     line-height: 1.5;
 }
 
-.social-links {
-    display: flex;
-    gap: 15px;
-}
-
-.social-links a {
-    color: #fff;
-    font-size: 20px;
-    transition: color 0.3s;
-}
-
-.social-links a:hover {
-    color: #007BFF;
-}
-
 .footer-bottom {
-    text-align: center;
     border-top: 1px solid #444;
     padding-top: 20px;
     margin-top: 20px;
@@ -259,77 +153,11 @@ footer {
 
 /* Responsivité */
 @media (max-width: 768px) {
-    .search-bar {
-        flex-direction: column;
+    .hero h1 {
+        font-size: 36px;
     }
 
-    .search-bar input {
-        width: 100%;
-        margin-bottom: 10px;
-        border-radius: 5px;
+    .hero p {
+        font-size: 18px;
     }
-
-    .search-bar button {
-        width: 100%;
-        border-radius: 5px;
-    }
-
-    .featured-brands .brand-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-.view-more {
-    text-align: center;
-    margin-top: 30px;
-    margin-bottom: 40px; /* Ajout d'un espace en bas pour éviter le chevauchement */
-}
-
-.view-more .btn {
-    padding: 10px 20px;
-    background-color: #007BFF;
-    color: #fff;
-    text-decoration: none;
-    font-size: 18px;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-}
-
-.view-more .btn:hover {
-    background-color: #0056b3;
-}
-/* Styles pour la grille des marques */
-.brands {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    margin-top: 20px;
-}
-
-.brand {
-    text-align: center;
-    margin-bottom: 20px;
-    flex-basis: 23%; /* Cela permet d'avoir environ 4 marques par ligne */
-}
-
-.brand img {
-    width: 100%;
-    max-width: 150px;
-    height: auto;
-    object-fit: contain;
-    margin-bottom: 10px;
-}
-
-.brand p {
-    margin: 0;
-    font-size: 16px;
-    font-weight: bold;
-}
-
-.brand a {
-    text-decoration: none;
-    color: #007BFF;
-}
-
-.brand a:hover {
-    text-decoration: underline;
 }
