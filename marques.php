@@ -1,3 +1,14 @@
+<?php
+include 'config.php'; // Assurez-vous que ce fichier contient les informations de connexion à la base de données
+
+// Récupérer les catégories et marques depuis la base de données
+$sql_categories = "SELECT id, name FROM categories";
+$result_categories = $conn->query($sql_categories);
+
+$sql_brands = "SELECT id, name FROM brands ORDER BY RAND() LIMIT 4";
+$result_brands = $conn->query($sql_brands);
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>

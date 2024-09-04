@@ -1,17 +1,14 @@
 <?php
-// Connexion à la base de données
-$conn = new mysqli("localhost", "root", "root", "catalogue");
+include 'config.php'; // Assurez-vous que ce fichier contient les informations de connexion à la base de données
 
-// Vérifiez la connexion
-if ($conn->connect_error) {
-    die("Échec de la connexion : " . $conn->connect_error);
-}
-
-// Récupérer les catégories depuis la base de données
+// Récupérer les catégories et marques depuis la base de données
 $sql_categories = "SELECT id, name FROM categories";
 $result_categories = $conn->query($sql_categories);
 
+$sql_brands = "SELECT id, name FROM brands ORDER BY RAND() LIMIT 4";
+$result_brands = $conn->query($sql_brands);
 ?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -23,26 +20,46 @@ $result_categories = $conn->query($sql_categories);
 </head>
 <body>
     <!-- En-tête -->
-    <header>
-        <div class="container">
-            <div class="logo">
-                <a href="#"><img src="./photos/logo2.png" alt="Logo de l'entreprise"></a>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="index.php">Accueil</a></li>
-                    <li><a href="teeshirt.php">Teeshirts</a></li>
-                    <li><a href="pulls.php">Pulls</a></li>
-                    <li><a href="baskets.php">Baskets</a></li>
-                    <li><a href="accessoires.php">Accessoires</a></li>
-                </ul>
-            </nav>
-            <div class="search-bar">
-                <input type="text" placeholder="Rechercher un produit...">
-                <button><i class="fas fa-search"></i></button>
-            </div>
+    <header class="header">
+    <div class="container">
+        <div class="logo">
+            <a href="#"><img src="./photos/logo2.png" alt="Logo de l'entreprise"></a>
         </div>
-    </header>
+        <nav>
+            <ul>
+                <li><a href="index.php">Accueil</a></li>
+                <li class="dropdown">
+                    <a href="produits.php">Catégorie</a>
+                    <ul class="dropdown-content">
+                        <?php
+                        // Récupérer les catégories depuis la base de données
+                        $sql_categories = "SELECT id, name FROM categories";
+                        $result_categories = $conn->query($sql_categories);
+
+                        // Afficher chaque catégorie dans le menu déroulant
+                        if ($result_categories->num_rows > 0) {
+                            while ($row = $result_categories->fetch_assoc()) {
+                                echo "<li><a href='produits.php?categorie_id=" . $row['id'] . "'>" . $row['name'] . "</a></li>";
+                            }
+                        }
+                        ?>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="catalogue.php">Catalogue</a>
+                    <ul class="dropdown-content">
+                        <li><a href="marques.php">Marques</a></li>
+                    </ul>
+                </li>
+                <li><a href="contact.php">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="search-bar-wrapper">
+            <input type="text" class="search-input" placeholder="Rechercher un produit...">
+            <button class="search-btn"><i class="fas fa-search"></i></button>
+        </div>
+    </div>
+</header>
 
     <!-- Bannière Principale -->
     <section class="hero">
@@ -59,14 +76,14 @@ $result_categories = $conn->query($sql_categories);
     <section class="categories">
         <div class="container">
             <h2>Nos Catégories</h2>
-            <div class="category-carousel">
+            <div class="category-grid">
                 <?php
-                // Afficher chaque catégorie
+                // Afficher les catégories
                 if ($result_categories->num_rows > 0) {
                     while ($row = $result_categories->fetch_assoc()) {
                         $category_name = $row['name'];
-                        $category_link = strtolower(str_replace(' ', '_', $category_name)) . ".php"; // Supposition : lien du fichier correspondant à chaque catégorie
-                        $image_path = "./photos/" . strtolower(str_replace(' ', '', $category_name)) . ".png"; // Supposition : chemin de l'image
+                        $category_link = strtolower(str_replace(' ', '_', $category_name)) . ".php";
+                        $image_path = "./photos/categorie" . strtolower(str_replace(' ', '', $category_name)) . ".png";
                         echo "
                         <div class='category-item'>
                             <a href='{$category_link}' target='_blank'><img src='{$image_path}' alt='{$category_name}' /></a>
@@ -87,15 +104,12 @@ $result_categories = $conn->query($sql_categories);
             <h2>Nos Marques</h2>
             <div class="brand-grid">
                 <?php
-                // Récupérer les marques depuis la base de données
-                $sql_brands = "SELECT id, name FROM brands LIMIT 4"; // Supposition : afficher 4 marques à la une
-                $result_brands = $conn->query($sql_brands);
-
+                // Afficher les marques
                 if ($result_brands->num_rows > 0) {
                     while ($row = $result_brands->fetch_assoc()) {
                         $brand_name = $row['name'];
-                        $brand_link = "produits.php?brand_id=" . $row['id']; // Lien vers la page produits avec le brand_id
-                        $image_path = "./photos/" . strtolower(str_replace(' ', '-', $brand_name)) . ".png"; // Supposition : chemin de l'image
+                        $brand_link = "produits.php?brand_id=" . $row['id'];
+                        $image_path = "./photos/" . strtolower(str_replace(' ', '-', $brand_name)) . ".png";
                         echo "
                         <div class='brand-item'>
                             <a href='{$brand_link}'><img src='{$image_path}' alt='{$brand_name}'></a>
