@@ -1,0 +1,157 @@
+<html>
+ <head>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <script src="https://registry.npmmirror.com/vue/3.3.11/files/dist/vue.global.js">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
+  <style>
+   body {
+      font-family: 'Roboto', sans-serif;
+    }
+  </style>
+ </head>
+ <body>
+  <div id="app">
+   <header class="bg-gray-700 p-4 flex items-center justify-between">
+    <img alt="AYCD logo" class="h-16 w-16" height="100" src="https://storage.googleapis.com/a1aa/image/0D9XMzrRYG5FDligqmxuzshYQ6JknfVDUa3OpK6Wf7Bp8PjTA.jpg" width="100"/>
+    <input class="p-2 rounded-full w-1/3" placeholder="Rechercher un produit" type="text"/>
+    <nav class="text-white space-x-4">
+     <a class="hover:underline" href="#">
+      Accueil
+     </a>
+     <a class="hover:underline" href="#">
+      Nos Marques
+     </a>
+     <a class="hover:underline" href="#">
+      Catégories
+     </a>
+     <a class="hover:underline" href="#">
+      Contact
+     </a>
+    </nav>
+   </header>
+   <main>
+    <section class="bg-blue-900 text-white text-center py-16">
+     <h1 class="text-4xl font-bold">
+      Bienvenue sur notre catalogue.
+     </h1>
+     <p class="mt-4">
+      Découvrez nos larges gamme de produits à prix réduits !
+     </p>
+     <div class="mt-8">
+      <img alt="AYCD logo large" class="mx-auto" height="200" src="https://storage.googleapis.com/a1aa/image/424OHnf4fMnOX009eF5qTmJpFUOjqctpE6vGcfxXJfJeMfnxJA.jpg" width="200"/>
+      <h2 class="text-6xl font-bold mt-4">
+       AYCD
+      </h2>
+      <p class="text-xl">
+       ALL YOU CAN DRIP
+      </p>
+     </div>
+    </section>
+    <section class="text-center py-8">
+     <h2 class="text-2xl font-bold">
+      Catégories
+     </h2>
+     <div class="grid grid-cols-3 gap-4 mt-8">
+      <div>
+       <img alt="T-shirts" class="mx-auto" height="100" src="https://storage.googleapis.com/a1aa/image/eTLAztrDjP05DqcAXZNmVSdCqJkplZK3kLekLGwjPTan8PjTA.jpg" width="100"/>
+       <p class="mt-2">
+        T-shirts
+       </p>
+      </div>
+      <div>
+       <img alt="Pulls" class="mx-auto" height="100" src="https://storage.googleapis.com/a1aa/image/l0Y81OKhEPJvO9Ny4TexFXu0BcsCV4eHC8tXHqohb3h38PjTA.jpg" width="100"/>
+       <p class="mt-2">
+        Pulls
+       </p>
+      </div>
+      <div>
+       <img alt="Sweats" class="mx-auto" height="100" src="https://storage.googleapis.com/a1aa/image/wFlouKaffQm9Y0BFhg2zn2GM7e0524YsPFo5nVeZtrDQzfZcC.jpg" width="100"/>
+       <p class="mt-2">
+        Sweats
+       </p>
+      </div>
+      <div>
+       <img alt="Vestes" class="mx-auto" height="100" src="https://storage.googleapis.com/a1aa/image/JCpL4iqRZc5uDhSVUWG5BVekzfLKUZzeW65E7Ng1papt5fMOB.jpg" width="100"/>
+       <p class="mt-2">
+        Vestes
+       </p>
+      </div>
+      <div>
+       <img alt="Manteaux" class="mx-auto" height="100" src="https://storage.googleapis.com/a1aa/image/esVtSUyW0tUVRyr9o9zsK8BafChLDHMY9us9TJZggZN68PjTA.jpg" width="100"/>
+       <p class="mt-2">
+        Manteaux
+       </p>
+      </div>
+      <div>
+       <img alt="Doudounes" class="mx-auto" height="100" src="https://storage.googleapis.com/a1aa/image/lfBaZkf2FHkTmk8r9aTLIUATCHebrlrf7Gm6DKuXPRWqyfZcC.jpg" width="100"/>
+       <p class="mt-2">
+        Doudounes
+       </p>
+      </div>
+      <div>
+       <img alt="Baskets" class="mx-auto" height="100" src="https://storage.googleapis.com/a1aa/image/edSMXvD2JUyxLaoE3SyXydr11TKHJ58IO9xo7mrffdFY5fMOB.jpg" width="100"/>
+       <p class="mt-2">
+        Baskets
+       </p>
+      </div>
+      <div>
+       <img alt="Accessoires" class="mx-auto" height="100" src="https://storage.googleapis.com/a1aa/image/Y1F6k8tS0qLRJNrutIE27f6tstrZqr2MK3Oql4ZITl8WePjTA.jpg" width="100"/>
+       <p class="mt-2">
+        Accessoires
+       </p>
+      </div>
+     </div>
+    </section>
+    <section class="text-center py-8">
+     <h2 class="text-2xl font-bold">
+      Nos Marques
+     </h2>
+     <div class="grid grid-cols-4 gap-4 mt-8">
+      <div>
+       <img alt="Marque 1" class="mx-auto" height="100" src="https://storage.googleapis.com/a1aa/image/InTB8HziFVLQOxOJ0VfqmBcBuMEaj3VCP68yEKJrnvpXePjTA.jpg" width="100"/>
+      </div>
+      <div>
+       <img alt="Marque 2" class="mx-auto" height="100" src="https://storage.googleapis.com/a1aa/image/eOrycE6bPFQVFS87GQwbht1sM6xsogXC5clWJLwreUAx8PjTA.jpg" width="100"/>
+      </div>
+      <div>
+       <img alt="Marque 3" class="mx-auto" height="100" src="https://storage.googleapis.com/a1aa/image/tkHMLHDMVJpnJlq7b0LeuFzf3iuaIozx09EW3tFfctdh5fMOB.jpg" width="100"/>
+      </div>
+      <div>
+       <img alt="Marque 4" class="mx-auto" height="100" src="https://storage.googleapis.com/a1aa/image/3g1vON7YZT6iEhwL3NheyIUIAqxikykf2imEwCpJia648PjTA.jpg" width="100"/>
+      </div>
+     </div>
+    </section>
+   </main>
+   <footer class="bg-gray-700 text-white text-center py-8">
+    <h2 class="text-xl font-bold">
+     À propos
+    </h2>
+    <p class="mt-4">
+     Bienvenue sur AYCD ! Votre catalogue avec une grande diversité de marques.
+    </p>
+    <p class="mt-2">
+     Contact
+    </p>
+    <p class="mt-2">
+     Téléphone : +33 1 23 45 67 89
+    </p>
+    <p class="mt-2">
+     Email : contact@example.com
+    </p>
+    <p class="mt-2">
+     Suivez-nous
+    </p>
+    <p class="mt-4">
+     © 2024 AYCD. Tous droits réservés.
+    </p>
+   </footer>
+  </div>
+  <script>
+   const { createApp } = Vue;
+    createApp({}).mount('#app');
+  </script>
+ </body>
+</html>
